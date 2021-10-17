@@ -6,9 +6,9 @@ namespace FoodOrderingApp.Model
 {
     public class Category
     {
-        public int categoryID { get; set; }
-        public string categoryName { get; set; }
-        public string categoryPoster { get; set; }
-        public string imageUrl { get; set; }
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
+        public string CategoryPoster { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

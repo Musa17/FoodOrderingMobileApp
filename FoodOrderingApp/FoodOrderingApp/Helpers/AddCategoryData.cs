@@ -22,26 +22,26 @@ namespace FoodOrderingApp.Helpers
             {
                 new Category()
                 {
-                    categoryID = 1,
-                    categoryName = "Pizza",
-                    categoryPoster = "Pizza",
-                    imageUrl = "Pizza.jpg"
+                    CategoryID = 1,
+                    CategoryName = "Pizza",
+                    CategoryPoster = "Pizza",
+                    ImageUrl = "Pizza.jpg"
                 },
 
                 new Category()
                 {
-                    categoryID = 2,
-                    categoryName = "Burger",
-                    categoryPoster = "Burger",
-                    imageUrl = "Burger.jpg"
+                    CategoryID = 2,
+                    CategoryName = "Burger",
+                    CategoryPoster = "Burger",
+                    ImageUrl = "Burger.jpg"
                 },
 
                 new Category()
                 {
-                    categoryID = 3,
-                    categoryName = "Cakes",
-                    categoryPoster = "Cakes",
-                    imageUrl = "Cakes.jpg"
+                    CategoryID = 3,
+                    CategoryName = "Cakes",
+                    CategoryPoster = "Cakes",
+                    ImageUrl = "Cakes.jpg"
                 }
             };
         }
@@ -54,10 +54,10 @@ namespace FoodOrderingApp.Helpers
                 {
                     await client.Child("Categories").PostAsync(new Category()
                     {
-                        categoryID = category.categoryID,
-                        categoryName = category.categoryName,
-                        categoryPoster = category.categoryPoster,
-                        imageUrl = category.imageUrl
+                        CategoryID = category.CategoryID,
+                        CategoryName = category.CategoryName,
+                        CategoryPoster = category.CategoryPoster,
+                        ImageUrl = category.ImageUrl
                     });
                 }
             }
