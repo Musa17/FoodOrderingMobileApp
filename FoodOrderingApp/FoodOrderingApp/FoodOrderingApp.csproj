@@ -21,7 +21,6 @@
   <ItemGroup>
     <Folder Include="Fonts\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Model\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
     <Folder Include="Services\" />
