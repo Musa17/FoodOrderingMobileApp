@@ -6,6 +6,11 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
              x:Class="FoodOrderingApp.Views.ProductsView">
+
+    <ContentPage.BindingContext>
+        <vm:ProductsViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <Grid Margin="20, 0, 0, 0">
             <Grid.RowDefinitions>
@@ -32,14 +37,14 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Welcome " Grid.Row="0" Grid.Column="0" TextColor="Silver"/>
-                <Label Text="{Binding Username}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{Binding UserName}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Purple"/>
+                <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Purple" WidthRequest="20"/>
                 <Label Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Text="{Binding UserCartItemsCount}" FontSize="Subtitle" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Green" Command="{Binding ViewCartCommand}"/>
+                <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Green" Command="{Binding ViewCartCommand}" WidthRequest="20"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Red" Command="{Binding LogoutCommand}"/>
+                <ImageButton Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Red" Command="{Binding LogoutCommand}" WidthRequest="20"/>
             </Grid>
 
 
