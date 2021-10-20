@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:fontAwesome="clr-namespace:FoodOrderingApp"
              x:Class="FoodOrderingApp.Views.CategoryView">
     
     <ContentPage.Content>
@@ -14,7 +15,13 @@
 
             <Image Grid.Row="0" Source="{Binding SelectedCategory.CategoryPoster}" Aspect="AspectFit" VerticalOptions="Start"/>
             <Label Grid.Row="1" Text="{Binding SelectedCategory.CategoryName}" TextColor="White" FontAttributes="Bold" FontSize="35" Margin="25, -85, 0, 0"/>
-            <ImageButton Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Start" Margin="10, 30" Clicked="ImageButton_Clicked"/>
+            <ImageButton Grid.Row="0" HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Start" Margin="10, 30" Clicked="ImageButton_Clicked">
+                <ImageButton.Source>
+                    <FontImageSource FontFamily="FontAwesome5Solid"
+                                 Color="White"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}"/>
+                </ImageButton.Source>
+            </ImageButton>
 
             <pancake:PancakeView Grid.Row="2" CornerRadius="30" BackgroundColor="White" Margin="0, -40">
                 <Grid Padding="25, 30">
@@ -28,7 +35,13 @@
                     </Grid.RowDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0" Text="{Binding TotalFoodItems, StringFormat='{0} Total Items'}" FontAttributes="Bold" FontSize="18"/>
-                    <Image Grid.Row="0" Grid.Column="1" Source="More"/>
+                    <Image Grid.Row="0" Grid.Column="1">
+                        <Image.Source>
+                            <FontImageSource FontFamily="FontAwesome5Solid"
+                                 Color="Black"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.SortAmountDownAlt}"/>
+                        </Image.Source>
+                    </Image>
 
                     <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                     ItemsSource="{Binding FoodItemsByCategory}"
@@ -59,7 +72,15 @@
 
                                             <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Name}" FontSize="15" FontAttributes="Bold"/>
                                             <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Description}" FontSize="15" TextColor="#a4a7b6"/>
-                                            <Image Grid.Row="2" Grid.Column="1" Source="Star" HorizontalOptions="Start" WidthRequest="20"/>
+
+                                            <Image Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" WidthRequest="20">
+                                                <Image.Source>
+                                                    <FontImageSource FontFamily="FontAwesome5Solid"
+                                                            Color="Yellow"
+                                                            Glyph="{x:Static fontAwesome:FontAwesomeIcons.Star}"/>
+                                                </Image.Source>
+                                            </Image>
+
                                             <Label Grid.Row="2" Grid.Column="1" Margin="30, 0, 0, 0" FontSize="15" VerticalOptions="Center">
                                                 <Label.FormattedText>
                                                     <FormattedString>
@@ -68,8 +89,14 @@
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>
-
-                                            <Image Grid.Row="0" Grid.Column="2" Source="{Binding HomeSelected}" HeightRequest="15"/>
+                                            <!-- Source="{Binding HomeSelected}"-->
+                                            <Image Grid.Row="0" Grid.Column="2" HeightRequest="15">
+                                                <Image.Source>
+                                                    <FontImageSource FontFamily="FontAwesome5Solid"
+                                                                    Color="Red"
+                                                                    Glyph="{x:Static fontAwesome:FontAwesomeIcons.Heart}"/>
+                                                </Image.Source>
+                                            </Image>
 
                                         </Grid>
                                     </Frame>

@@ -37,7 +37,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="Welcome " Grid.Row="0" Grid.Column="0" TextColor="Silver"/>
+                <Label Text="Welcome " Grid.Row="0" Grid.Column="0" TextColor="Silver" Margin="0, 15, 0, 0"/>
                 <Label Text="{Binding UserName}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
 
                 <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" WidthRequest="30">
@@ -48,7 +48,7 @@
                     </ImageButton.Source>
                 </ImageButton>
 
-                <Label Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Text="{Binding UserCartItemsCount}" FontSize="Subtitle" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
+                <Label Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Text="{Binding UserCartItemsCount}" FontSize="Subtitle" HorizontalTextAlignment="End" VerticalTextAlignment="Start" Margin="0, 10, 0, 0"/>
 
                 <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" Command="{Binding ViewCartCommand}" WidthRequest="30">
                     <ImageButton.Source>
@@ -130,11 +130,22 @@
                                 </pancake:PancakeView>
 
                                 <Frame Grid.Row="1" Margin="20, -80, 20, 70" BackgroundColor="White" CornerRadius="15" HorizontalOptions="End">
-                                    <Label Text="{Binding Price, StringFormat='{0:c}'}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HeightRequest="10"/>
+                                    <Label Text="{Binding Price, StringFormat='{0:c}'}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HeightRequest="20"/>
                                 </Frame>
 
                                 <Label Grid.Row="1" Text="{Binding Name}" FontSize="22" FontAttributes="Bold" VerticalTextAlignment="Center"/>
-                                <Image Grid.Row="2" Source="Star" HorizontalOptions="Start" WidthRequest="20"/>
+
+
+                                <Image Grid.Row="2" Margin="0, 0, 10, 0" HorizontalOptions="Start" WidthRequest="20">
+                                    <Image.Source>
+                                        <FontImageSource FontFamily="FontAwesome5Solid"
+                                                Color="Yellow"
+                                                Glyph="{x:Static fontAwesome:FontAwesomeIcons.Star}"/>
+                                    </Image.Source>
+                                </Image>
+
+
+                                <!--<Image Grid.Row="2" Source="Star" HorizontalOptions="Start" WidthRequest="20"/>-->
                                 <Label Grid.Row="2" Margin="30, 0, 0, 0" FontSize="15" VerticalOptions="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
