@@ -4,6 +4,7 @@
              xmlns:vm="clr-namespace:FoodOrderingApp.ViewModels"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:fontAwesome="clr-namespace:FoodOrderingApp"
              ios:Page.UseSafeArea="True"
              x:Class="FoodOrderingApp.Views.ProductsView">
 
@@ -39,12 +40,32 @@
                 <Label Text="Welcome " Grid.Row="0" Grid.Column="0" TextColor="Silver"/>
                 <Label Text="{Binding UserName}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Purple" WidthRequest="20"/>
+                <ImageButton Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" WidthRequest="30">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="FontAwesome5Solid"
+                                 Color="Purple"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.ThList}"/>
+                    </ImageButton.Source>
+                </ImageButton>
+
                 <Label Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Text="{Binding UserCartItemsCount}" FontSize="Subtitle" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
 
-                <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Green" Command="{Binding ViewCartCommand}" WidthRequest="20"/>
+                <ImageButton Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" Command="{Binding ViewCartCommand}" WidthRequest="30">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="FontAwesome5Solid"
+                                 Color="Green"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.ShoppingCart}"/>
+                    </ImageButton.Source>
+                </ImageButton>
 
-                <ImageButton Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Red" Command="{Binding LogoutCommand}" WidthRequest="20"/>
+                <ImageButton Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Margin="0, 0, 10, 0" HorizontalOptions="End" Command="{Binding LogoutCommand}" WidthRequest="30">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="FontAwesome5Solid"
+                                 Color="Red"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.SignOutAlt}"/>
+                    </ImageButton.Source>
+                </ImageButton>
+
             </Grid>
 
 
@@ -56,7 +77,13 @@
 
                 <SearchBar Grid.Column="0" Placeholder="Search Food" BackgroundColor="Transparent" HorizontalOptions="Fill"/>
 
-                <ImageButton Grid.Column="1" Margin="0, 0, 10, 0" HorizontalOptions="End" BackgroundColor="Black"/>
+                <ImageButton Grid.Column="1" Margin="0, 0, 10, 0" HorizontalOptions="End" WidthRequest="30">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="FontAwesome5Solid"
+                                 Color="Black"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.Search}"/>
+                    </ImageButton.Source>
+                </ImageButton>
             </Grid>
 
 

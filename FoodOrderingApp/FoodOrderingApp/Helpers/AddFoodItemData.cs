@@ -25,7 +25,7 @@ namespace FoodOrderingApp.Helpers
                 {
                     ProductID = 1,
                     CategoryID = 1,
-                    ImageUrl = "Pizza.jpg",
+                    ImageUrl = "Pizza1.jpg",
                     Name = "Pizza 1",
                     Description = "Pizza 1 - Description",
                     Rating = "4.8",
@@ -38,7 +38,7 @@ namespace FoodOrderingApp.Helpers
                 {
                     ProductID = 2,
                     CategoryID = 1,
-                    ImageUrl = "Pizza.jpg",
+                    ImageUrl = "Pizza2.jpg",
                     Name = "Pizza 2",
                     Description = "Pizza 2 - Description",
                     Rating = "4.4",
@@ -51,13 +51,52 @@ namespace FoodOrderingApp.Helpers
                 {
                     ProductID = 3,
                     CategoryID = 2,
-                    ImageUrl = "Burger.jpg",
+                    ImageUrl = "Burger1.jpg",
                     Name = "Burger 1",
                     Description = "Burger 1 - Description",
                     Rating = "4.5",
                     RatingDetail = "(101 ratings)",
                     HomeSelected = "CompleteHeart",
                     Price = 20
+                },
+
+                new FoodItem()
+                {
+                    ProductID = 4,
+                    CategoryID = 2,
+                    ImageUrl = "Burger2.jpg",
+                    Name = "Burger 2",
+                    Description = "Burger 2 - Description",
+                    Rating = "4.5",
+                    RatingDetail = "(10 ratings)",
+                    HomeSelected = "CompleteHeart",
+                    Price = 25
+                },
+
+                new FoodItem()
+                {
+                    ProductID = 5,
+                    CategoryID = 3,
+                    ImageUrl = "Cake1.jpg",
+                    Name = "Cake 1",
+                    Description = "Cake 1 - Description",
+                    Rating = "4.5",
+                    RatingDetail = "(10 ratings)",
+                    HomeSelected = "CompleteHeart",
+                    Price = 25
+                },
+                
+                new FoodItem()
+                {
+                    ProductID = 6,
+                    CategoryID = 3,
+                    ImageUrl = "Cake2.jpg",
+                    Name = "Cake 2",
+                    Description = "Cake 2 - Description",
+                    Rating = "4.5",
+                    RatingDetail = "(10 ratings)",
+                    HomeSelected = "CompleteHeart",
+                    Price = 25
                 }
             };
         }

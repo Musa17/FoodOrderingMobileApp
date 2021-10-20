@@ -11,15 +11,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\FontAwesome5Brands-Regular-400.otf" />
+    <None Remove="Fonts\FontAwesome5Free-Regular-400.otf" />
+    <None Remove="Fonts\FontAwesome5Free-Solid-900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\FontAwesome5Brands-Regular-400.otf" />
+    <EmbeddedResource Include="Fonts\FontAwesome5Free-Regular-400.otf" />
+    <EmbeddedResource Include="Fonts\FontAwesome5Free-Solid-900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FirebaseDatabase.net" Version="4.0.6" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2125" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Fonts\" />
   </ItemGroup>
 
   <ItemGroup>

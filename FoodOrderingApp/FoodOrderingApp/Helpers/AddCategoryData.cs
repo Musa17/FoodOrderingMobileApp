@@ -24,24 +24,24 @@ namespace FoodOrderingApp.Helpers
                 {
                     CategoryID = 1,
                     CategoryName = "Pizza",
-                    CategoryPoster = "Pizza",
-                    ImageUrl = "Pizza.jpg"
+                    CategoryPoster = "PizzasPoster.jpg",
+                    ImageUrl = "Pizzas.png"
                 },
 
                 new Category()
                 {
                     CategoryID = 2,
-                    CategoryName = "Burger",
-                    CategoryPoster = "Burger",
-                    ImageUrl = "Burger.jpg"
+                    CategoryName = "Burgers",
+                    CategoryPoster = "BurgersPoster.jpg",
+                    ImageUrl = "Burgers.png"
                 },
 
                 new Category()
                 {
                     CategoryID = 3,
                     CategoryName = "Cakes",
-                    CategoryPoster = "Cakes",
-                    ImageUrl = "Cakes.jpg"
+                    CategoryPoster = "CakesPoster.jpg",
+                    ImageUrl = "Cakes.png"
                 }
             };
         }
