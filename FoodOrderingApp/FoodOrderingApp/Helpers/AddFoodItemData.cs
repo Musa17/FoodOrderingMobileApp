@@ -97,6 +97,32 @@ namespace FoodOrderingApp.Helpers
                     RatingDetail = "(10 ratings)",
                     HomeSelected = "CompleteHeart",
                     Price = 25
+                },
+
+                new FoodItem()
+                {
+                    ProductID = 7,
+                    CategoryID = 4,
+                    ImageUrl = "Salad1.jpg",
+                    Name = "Salad 1",
+                    Description = "Salad 1 - Description",
+                    Rating = "4.5",
+                    RatingDetail = "(10 ratings)",
+                    HomeSelected = "CompleteHeart",
+                    Price = 25
+                },
+
+                new FoodItem()
+                {
+                    ProductID = 8,
+                    CategoryID = 4,
+                    ImageUrl = "Salad2.jpg",
+                    Name = "Salad 2",
+                    Description = "Salad 2 - Description",
+                    Rating = "4.5",
+                    RatingDetail = "(10 ratings)",
+                    HomeSelected = "CompleteHeart",
+                    Price = 25
                 }
             };
         }

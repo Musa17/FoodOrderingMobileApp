@@ -42,6 +42,14 @@ namespace FoodOrderingApp.Helpers
                     CategoryName = "Cakes",
                     CategoryPoster = "CakesPoster.jpg",
                     ImageUrl = "Cakes.png"
+                },
+
+                new Category()
+                {
+                    CategoryID = 4,
+                    CategoryName = "Salads",
+                    CategoryPoster = "SaladsPoster.jpg",
+                    ImageUrl = "Salads.png"
                 }
             };
         }
