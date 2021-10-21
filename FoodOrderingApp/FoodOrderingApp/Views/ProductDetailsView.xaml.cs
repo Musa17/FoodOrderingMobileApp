@@ -1,4 +1,5 @@
 ﻿using FoodOrderingApp.Model;
+using FoodOrderingApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,18 @@ namespace FoodOrderingApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductDetailsView : ContentPage
     {
+        ProductDetailsViewModel pvm;
+
         public ProductDetailsView(FoodItem foodItem)
         {
             InitializeComponent();
+            pvm = new ProductDetailsViewModel(foodItem);
+            this.BindingContext = pvm;
+        }
+
+        async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }
