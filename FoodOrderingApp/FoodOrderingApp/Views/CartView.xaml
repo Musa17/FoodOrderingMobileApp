@@ -27,7 +27,7 @@
 
             <Label Text="Burger Queen" FontSize="40" TextColor="WhiteSmoke" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-            <Label x:Name="LabelName" FontSize="Subtitle" TextColor="WhiteSmoke" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label x:Name="LabelName" FontSize="Subtitle" TextColor="WhiteSmoke" HorizontalOptions="Center" VerticalOptions="End"/>
 
             <ImageButton Grid.Row="0" Source="{FontImage FontFamily=FontAwesome5Solid, Glyph={x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}, Size=30, Color=White}"
                              HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Start" Margin="10, 30" Clicked="ImageButton_Clicked"/>
