@@ -21,7 +21,7 @@
 
                 <Label Grid.Row="1" Text="{Binding SelectedFoodItem.Name}" TextColor="White" FontAttributes="Bold" FontSize="35" Margin="25, -85, 0, 0"/>
 
-                <ImageButton Grid.Row="0" Source="{FontImage FontFamily=FontAwesome, Glyph={x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}, Size=30, Color=White}"
+                <ImageButton Grid.Row="0" Source="{FontImage FontFamily=FontAwesome5Solid, Glyph={x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}, Size=30, Color=White}"
                              HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Start" Margin="10, 30" Clicked="ImageButton_Clicked"/>
 
                 <StackLayout Grid.Row="2" Spacing="10" Padding="10" VerticalOptions="Start">
