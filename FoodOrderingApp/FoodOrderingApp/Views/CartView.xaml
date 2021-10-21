@@ -1,12 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodOrderingApp.Views.CartView">
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:fontAwesome="clr-namespace:FoodOrderingApp"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:vm="clr-namespace:FoodOrderingApp.ViewModels"
+             x:Class="FoodOrderingApp.Views.CartView"
+             Visual="Material"
+             BackgroundColor="LimeGreen">
+
+    <ContentPage.BindingContext>
+        <vm:CartViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Cart View"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid BackgroundColor="LimeGreen">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <BoxView Grid.Row="0"/>
+
+            <Label Text="Burger Queen" FontSize="40" TextColor="WhiteSmoke" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <Label x:Name="LabelName" FontSize="Subtitle" TextColor="WhiteSmoke" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <ImageButton Grid.Row="0" Source="{FontImage FontFamily=FontAwesome5Solid, Glyph={x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}, Size=30, Color=White}"
+                             HorizontalOptions="Start" Aspect="AspectFit" VerticalOptions="Start" Margin="10, 30" Clicked="ImageButton_Clicked"/>
+
+            <pancake:PancakeView Grid.Row="1" BackgroundColor="WhiteSmoke" CornerRadius="60, 60, 0, 0">
+                <ListView x:Name="ListViewCartItems" Margin="20" SeparatorVisibility="None" BackgroundColor="WhiteSmoke" Header="" HasUnevenRows="True" ItemsSource="{Binding CartItems}">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="ID" FontSize="Subtitle" TextColor="Green"/>
+                                <Label Grid.Column="1" Text="Name" FontSize="Subtitle" TextColor="Green"/>
+                                <Label Grid.Column="2" Text="Price" FontSize="Subtitle" TextColor="Green"/>
+                                <Label Grid.Column="3" Text="Quantity" FontSize="Subtitle" TextColor="Green"/>
+                                <Label Grid.Column="4" Text="Cost" FontSize="Subtitle" TextColor="Green"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0" Text="{Binding ProductID}" FontSize="Body" TextColor="Green"/>
+                                        <Label Grid.Column="1" Text="{Binding ProductName}" FontSize="Body" TextColor="Green"/>
+                                        <Label Grid.Column="2" Text="{Binding Price}" FontSize="Body" TextColor="Green"/>
+                                        <Label Grid.Column="3" Text="{Binding Quantity}" FontSize="Body" TextColor="Green"/>
+                                        <Label Grid.Column="4" Text="{Binding Cost}" FontSize="Body" TextColor="Green"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </pancake:PancakeView>
+
+            <Label Grid.Row="2" Text="{Binding TotalCost, StringFormat='Total Cost: {0:c}'}" FontSize="Title" HorizontalTextAlignment="End" TextColor="WhiteSmoke"/>
+
+            <Button Grid.Row="3" Text="Place Order" TextColor="White" HorizontalOptions="Center" CornerRadius="20" Command="{Binding PlaceOrdersCommand}"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
