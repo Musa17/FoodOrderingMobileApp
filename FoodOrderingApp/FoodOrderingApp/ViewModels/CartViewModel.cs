@@ -1,4 +1,5 @@
 ﻿using FoodOrderingApp.Model;
+using FoodOrderingApp.Services;
 using FoodOrderingApp.Views;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,15 @@ namespace FoodOrderingApp.ViewModels
 
         private async Task PlaceOrdersAsync()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new OrdersView());
+            var id = await new OrderService().PlaceOrderAsync() as string;
+            RemoveItemsFromCart();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new OrdersView(id));
+        }
+
+        private void RemoveItemsFromCart()
+        {
+            var cis = new CartItemService();
+            cis.RemoveItemsFromCart();
         }
 
         private void LoadItems()
